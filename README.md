@@ -46,8 +46,8 @@ conda activate datathon
 
 ```bash
 conda install pandas=2.2.3 numpy=1.26.4 matplotlib=3.9.2 scikit-learn=1.6.1 seaborn=0.13.2 joblib=1.4.2
-pip install statsmodels
-pip install xgboost
+conda install statsmodels
+conda install xgboost
 conda install pytorch=2.5.1 -c pytorch
 ```
 
