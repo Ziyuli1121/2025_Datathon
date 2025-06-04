@@ -621,8 +621,9 @@ def predict_optimal_increase_with_ml(df):
     df_result['ml_credit_line_increase'] = df_result['ml_credit_line_increase'].apply(
         lambda x: max(0, min(round(x / 100) * 100, 10000))  # Range 0-10000, round to nearest 100
     )
-    
-    return df_result
+
+    # Return additional objects for further analysis/visualisation
+    return df_result, X, y_test, y_pred, model
 
 # Combine rule-based and machine learning results
 def combine_recommendation_results(rule_based_df, ml_df=None):
@@ -874,12 +875,13 @@ def main():
     
     # 2. Try to use machine learning model
     try:
-        ml_result = predict_optimal_increase_with_ml(df_combined)
+        ml_result, X, y_test, y_pred, model = predict_optimal_increase_with_ml(df_combined)
     except Exception as e:
         print(f"Failed to train machine learning model: {e}")
         import traceback
         traceback.print_exc()
         ml_result = None
+        X = y_test = y_pred = model = None
     
     # 3. Combine results
     final_result = combine_recommendation_results(rule_based_result, ml_result)
@@ -899,7 +901,7 @@ def main():
         create_feature_correlation_visualizations(df_combined)
         
         # Only create model evaluation visualizations if ML model was successfully trained
-        if ml_result is not None and 'X' in locals() and 'y_test' in locals() and 'y_pred' in locals() and 'model' in locals():
+        if ml_result is not None and X is not None and y_test is not None and y_pred is not None and model is not None:
             create_model_evaluation_visualizations(X, y_test, y_pred, model)
         else:
             print("Machine learning model evaluation visualizations skipped - model or necessary variables not available")
