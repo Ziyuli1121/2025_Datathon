@@ -24,8 +24,7 @@ Datathon/
 │   └── [outputs]
 ├── README.md   # this file
 ├── Canes.pptx  # presentation slides
-├── requirements.txt # environment requirements
-└── problem_statement.markdown # summary of the problems
+└── requirements.txt # environment requirements
 
 ```
 
