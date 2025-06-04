@@ -446,4 +446,4 @@ for segment, count in segment_counts.items():
     percentage = segment_percentages[segment]
     print(f"{segment}: {count} accounts ({percentage:.2f}%)")
 
-print("\nClustering model and analysis completed!") 
+print("\nClustering model and analysis completed!")
