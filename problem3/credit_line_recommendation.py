@@ -979,4 +979,4 @@ def main():
     print(f"Log file saved to: {log_file_path}")
 
 if __name__ == "__main__":
-    main() 
+    main()
