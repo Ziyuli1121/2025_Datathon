@@ -345,4 +345,4 @@ The system generates the following visualizations:
 - Combines rule-based and machine learning methods, balancing expert knowledge and data-driven decisions
 - Considers multiple risk factors and spending patterns
 - Provides differentiated strategies for customers with different risk levels
-- Provides visualization results for easy analysis
+- Provides visualization results for easy analysis.
